@@ -16,7 +16,7 @@ import numpy as np
 
 from tensorflow.keras.models import load_model
 
-model = load_model('model.h5', compile = False)
+model = load_model('catdog2_model2.h5', compile = False)
 
 # model_path ="Emodel.h5"
 # model = tf.keras.models.load_model(model_path)
