@@ -10,16 +10,22 @@ import streamlit as st
 from PIL import Image, ImageOps
 import numpy as np
 #from keras.models import model_from_json
-from tensorflow.keras.models import load_model , model_from_json ,load_weights
+#from tensorflow.keras.models import load_model , model_from_json ,load_weights
+
+
+
+from tensorflow.keras.models import load_model
+
+model = load_model('model.h5', compile = False)
 
 # model_path ="Emodel.h5"
 # model = tf.keras.models.load_model(model_path)
 
-json_file = open('model2.json', 'r')
-model_json = json_file.read()
-json_file.close()
-model = model_from_json(model_json)
-model.load_weights('model2_weights.h5')
+#json_file = open('model2.json', 'r')
+#model_json = json_file.read()
+#json_file.close()
+#model = model_from_json(model_json)
+#model.load_weights('model2_weights.h5')
 
 
 
