@@ -9,7 +9,8 @@ import tensorflow as tf
 import streamlit as st
 from PIL import Image, ImageOps
 import numpy as np
-from keras.models import model_from_json
+#from keras.models import model_from_json
+from tensorflow.keras.models import load_model , model_from_json
 
 # model_path ="Emodel.h5"
 # model = tf.keras.models.load_model(model_path)
