@@ -13,11 +13,11 @@ from keras.models import model_from_json
 
 def catdogtiger_classifier(image):
     # Load the model
-    json_file = open('G:\My Drive\catdogtiger2\model_set2\model2.json', 'r')
+    json_file = open('model2.json', 'r')
     model_json = json_file.read()
     json_file.close()
     model = model_from_json(model_json)
-    model.load_weights('G:\My Drive\catdogtiger2\model_set2\model2_weights.h5')
+    model.load_weights('model2_weights.h5')
     size = (64, 64)
     uploaded_file  = ImageOps.fit(image, size, Image.ANTIALIAS)
     image = uploaded_file.convert('RGB')
