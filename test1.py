@@ -9,8 +9,9 @@ import tensorflow as tf
 import streamlit as st
 from PIL import Image, ImageOps
 import numpy as np
+from tensorflow.keras.models import load_mode
 
 
-model = tf.keras.models.load_model('model.h5')
+model = load_model('model.h5')
 
 st.title("Dog / Cat / Tiger Classfication ")
