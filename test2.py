@@ -15,7 +15,7 @@ from test2_classifier import catdogtiger_classifier
 st.title("Dog / Cat / Tiger Classfication ")
 
 st.text("Upload your picture here")
-uploaded_file = st.file_uploader("Upload your picture here ...", type=["jpg","png"],accept_multiple_files=False)
+uploaded_file = st.file_uploader("Upload your picture here ...", type=["jpg","png"])
 if uploaded_file is None:
    st.text("Upload your picture")
 else:
