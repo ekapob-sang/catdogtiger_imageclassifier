@@ -9,7 +9,7 @@ import tensorflow as tf
 import streamlit as st
 from PIL import Image, ImageOps
 import numpy as np
-from keras.models import load_mode
+from keras.models import load_model
 
 
 model = load_model('model.h5')
