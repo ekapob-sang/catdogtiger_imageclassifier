@@ -9,7 +9,7 @@ import streamlit as st
 #import keras
 from PIL import Image, ImageOps
 import numpy as np
-from test3_classifier import catdogtiger_classifier
+from catdogclassifier import catdogtiger_classifier
 import pandas as pd
 
 
