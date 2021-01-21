@@ -13,19 +13,13 @@ from tensorflow.keras.models import  load_model
 
 @st.cache(allow_output_mutation=True)
 def loadcnn():
-    model = tf.keras.models.load_model("E:\Practice deploy\catdogtiger_classifier\dataset in tf20\catdog_model2_tf20.h5")
+    model = tf.keras.models.load_model("catdog_model2_tf20.h5")
     return model
     
     
     
 def catdogtiger_classifier(image):
     # Load the model
-    #model = tf.keras.models.load_model("E:\Practice deploy\catdogtiger_classifier\dataset in tf20\catdog_model2_tf20.h5")
-    # json_file = open('G:\My Drive\catdogtiger2\model_set2\model2.json', 'r')
-    # model_json = json_file.read()
-    # json_file.close()
-    # model = model_from_json(model_json)
-    # model.load_weights('G:\My Drive\catdogtiger2\model_set2\model2_weights.h5')
     size = (64, 64)
     uploaded_file  = ImageOps.fit(image, size, Image.ANTIALIAS)
     image = uploaded_file.convert('RGB')
