@@ -16,8 +16,9 @@ import pandas as pd
 
 st.title("Dog / Cat / Tiger Classfication Model")
 st.text("Use the simple AI for classification ")
-st.subheader("This model has accuracy about 77%")
-#st.text()
+st.text("This model has accuracy about 77%")
+st.text("- กด browse file เพื่อทำนายภาพ" )
+st.text("- ถ้าต้องการทำนายภาพซ้ำ คลิก X เพื่อลบรูปเดิมออก" )
 result = st.empty()
 
 
