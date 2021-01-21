@@ -11,9 +11,16 @@ import streamlit as st
 import tensorflow as tf
 from tensorflow.keras.models import  load_model
 
+@st.cache(allow_output_mutation=True)
+def loadcnn():
+    model = tf.keras.models.load_model("E:\Practice deploy\catdogtiger_classifier\dataset in tf20\catdog_model2_tf20.h5")
+    return model
+    
+    
+    
 def catdogtiger_classifier(image):
     # Load the model
-    model = tf.keras.models.load_model("catdog_model2_tf20.h5")
+    #model = tf.keras.models.load_model("E:\Practice deploy\catdogtiger_classifier\dataset in tf20\catdog_model2_tf20.h5")
     # json_file = open('G:\My Drive\catdogtiger2\model_set2\model2.json', 'r')
     # model_json = json_file.read()
     # json_file.close()
@@ -30,5 +37,6 @@ def catdogtiger_classifier(image):
     # Load the image into the array
     #data[0] = normalized_image_array  # (Not sure if this is needed, but gives an error!!!)
     # run the inference
-    prediction = model.predict(img_reshape)  
+    model2=loadcnn()
+    prediction = model2.predict(img_reshape)  
     return prediction

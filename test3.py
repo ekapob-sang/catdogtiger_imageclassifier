@@ -10,12 +10,19 @@ import streamlit as st
 from PIL import Image, ImageOps
 import numpy as np
 from test3_classifier import catdogtiger_classifier
+import pandas as pd
 
 
-st.title("Dog / Cat / Tiger Classfication ")
 
-st.text("Upload your picture here")
-uploaded_file = st.file_uploader("Upload your picture here ...", type=["jpg","png"],accept_multiple_files=False)
+st.title("Dog / Cat / Tiger Classfication Model")
+st.text("Use the simple AI for classification ")
+st.subheader("This model has accuracy about 77%")
+#st.text()
+result = st.empty()
+
+
+
+uploaded_file = st.file_uploader("Upload your picture here ...", type=["jpg","png","jpeg"],accept_multiple_files=False)
 if uploaded_file is None:
    st.text("Upload your picture")
 else:
@@ -24,10 +31,13 @@ else:
   st.write("")
   predict = catdogtiger_classifier(image) # Name of the model from Teachablemachine
   if np.argmax(predict) == 0:
-        st.write("It is a dog!")
+        result.subheader("It is a dog!")
   elif np.argmax(predict) == 1:
-        st.write("It is a cat!")
+        result.subheader("It is a cat!")
   else:
-        st.write("It is a tiger!")
-  st.text("Probability (%) 0: Dog, 1: Cat, 2: Tiger")
-  st.write(np.round(predict*100,2))
+        result.subheader("It is a tiger!")
+  predict_prob=np.round(predict,2)*100
+  a=pd.DataFrame(predict_prob,columns=('Dog','Cat','Tiger'),index=['Probability(%)'])
+  st.dataframe(a)
+
+
